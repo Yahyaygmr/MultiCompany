@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MultiCompany.Attributes;
 using MultiCompany.DataAccess;
 using MultiCompany.Entities;
 
 namespace MultiCompany.Controllers
 {
-
+    [Authorize]
+    [CompanyAuthorize]
     public class CompanyController(AppDbContext context) : Controller
     {
 
